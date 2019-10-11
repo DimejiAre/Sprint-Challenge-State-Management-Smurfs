@@ -9,6 +9,7 @@ export function Smurf(props){
             <h2>{smurf.name}</h2>
             <p>Height: {smurf.height}</p>
             <p>Age: {smurf.age}</p>
+            <p>ID: {smurf.id}</p>
         </div>
     )
 }

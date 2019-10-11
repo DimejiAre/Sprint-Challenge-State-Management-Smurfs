@@ -2,7 +2,7 @@ import * as types from './actionTypes';
 
 const initialSmurfs = [{ name: 'dimeji', age: 12, height: '12cm', id: 0 }]
 
-const initialSmurfForm = {name: '', age: '', height: ''}
+const initialSmurfForm = {name: '', age: '', height: '', id: ''}
 
 
 export function smurfsReducer(state = initialSmurfs, action) {

@@ -4,11 +4,16 @@ import * as actionCreators from '../state/actionCreators';
 import '../scss/SmurfForm.scss';
 
 export function SmurfForm(props) {
-    const {getFormValue, postSmurfs, smurfForm} = props;
+    const {getFormValue, postSmurfs, smurfForm, editSmurfs} = props;
     
     const submit = smurfForm => event => {
         event.preventDefault()
         postSmurfs(smurfForm)
+    };
+
+    const edit = smurfForm => event => {
+        event.preventDefault()
+        editSmurfs(smurfForm)
     };
 
     return (
@@ -22,6 +27,9 @@ export function SmurfForm(props) {
             <label htmlFor='height'>height</label>
             <input value={smurfForm.height} onChange={getFormValue} name='height' type='text' />
             <button onClick={submit(smurfForm)}>Submit</button>
+            <label htmlFor='id'>Enter Id for Edit and Delete:</label>
+            <input value={smurfForm.id} onChange={getFormValue} name='id' type='text' />
+            <button onClick={edit(smurfForm)}>Edit</button>
             </fieldset>
         </form>
     )

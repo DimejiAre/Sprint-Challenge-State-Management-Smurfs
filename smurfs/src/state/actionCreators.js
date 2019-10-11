@@ -31,13 +31,27 @@ export const getFormValue = event => {
 }
 
 export const postSmurfs = (smurf) => dispatch => {
-    debugger
     const params = {
         name: smurf.name,
         age: smurf.age,
         height: smurf.height
       }
     axios.post(smurfsApi, params)
+    .then(res =>{
+        dispatch(addSmurfs(res.data))
+        dispatch({type: types.ON_SUBMIT})
+    })
+}
+
+export const editSmurfs = (smurf) => dispatch => {
+    debugger
+    const params = {
+        id: Number(smurf.id),
+        name: smurf.name,
+        age: Number(smurf.age),
+        height: smurf.height
+      }
+    axios.put(smurfsApi + '/' + smurf.id, params)
     .then(res =>{
         dispatch(addSmurfs(res.data))
         dispatch({type: types.ON_SUBMIT})
