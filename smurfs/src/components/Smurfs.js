@@ -16,7 +16,7 @@ export function Smurfs(props) {
             {
                 smurfs ?
                     smurfs.map(smurf => (
-                        <Smurf smurf={smurf} />
+                        <Smurf key={smurf.id} smurf={smurf} />
                     ))
                     : null
             }

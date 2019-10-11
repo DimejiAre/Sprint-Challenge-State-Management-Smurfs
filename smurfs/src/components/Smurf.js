@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
-export function Smurf(props){
-    const {smurf} = props;
+export function Smurf(props) {
+    const { smurf } = props;
     return (
         <div className='smurf'>
             <h2>{smurf.name}</h2>
