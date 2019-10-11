@@ -30,7 +30,15 @@ export const getFormValue = event => {
     }
 }
 
+export const editFormValue = smurf => {
+    return {
+        type: types.ON_INPUT_EDIT,
+        payload: smurf
+    }
+}
+
 export const postSmurfs = (smurf) => dispatch => {
+    debugger
     const params = {
         name: smurf.name,
         age: smurf.age,
@@ -44,6 +52,7 @@ export const postSmurfs = (smurf) => dispatch => {
 }
 
 export const editSmurfs = (smurf) => dispatch => {
+    debugger
     const params = {
         id: Number(smurf.id),
         name: smurf.name,

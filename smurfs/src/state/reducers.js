@@ -20,6 +20,8 @@ export function smurfFormReducer(state = initialSmurfForm, action) {
             return {
                 ...state, [action.payload.name]: action.payload.value
             }
+        case types.ON_INPUT_EDIT:
+            return action.payload;
         case types.ON_SUBMIT:
             return initialSmurfForm;
         default:
