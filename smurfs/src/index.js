@@ -9,6 +9,7 @@ import App from "./components/App";
 
 const rootReducer = combineReducers({
     smurfs: reducers.smurfsReducer,
+    smurfForm: reducers.smurfFormReducer,
 })
 
 const store = createStore(
