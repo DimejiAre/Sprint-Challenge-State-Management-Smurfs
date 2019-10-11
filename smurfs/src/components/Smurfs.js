@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 import Smurf from './Smurf';
 
-export function Smurfs(props){
-    const {smurfs} = props;
+export function Smurfs(props) {
+    const { smurfs, getSmurfs } = props;
+
+    useEffect(() => {
+        getSmurfs()
+    }, [])
+
     return (
         <div className='smurfs'>
             {
-                smurfs?
-                smurfs.map(smurf => (
-                    <Smurf smurf={smurf}/>
-                ))
-                : null
+                smurfs ?
+                    smurfs.map(smurf => (
+                        <Smurf smurf={smurf} />
+                    ))
+                    : null
             }
         </div>
     )
