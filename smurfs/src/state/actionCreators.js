@@ -44,7 +44,6 @@ export const postSmurfs = (smurf) => dispatch => {
 }
 
 export const editSmurfs = (smurf) => dispatch => {
-    debugger
     const params = {
         id: Number(smurf.id),
         name: smurf.name,
@@ -52,6 +51,14 @@ export const editSmurfs = (smurf) => dispatch => {
         height: smurf.height
       }
     axios.put(smurfsApi + '/' + smurf.id, params)
+    .then(res =>{
+        dispatch(addSmurfs(res.data))
+        dispatch({type: types.ON_SUBMIT})
+    })
+}
+
+export const removeSmurfs = (smurf) => dispatch => {
+    axios.delete(smurfsApi + '/' + smurf.id)
     .then(res =>{
         dispatch(addSmurfs(res.data))
         dispatch({type: types.ON_SUBMIT})

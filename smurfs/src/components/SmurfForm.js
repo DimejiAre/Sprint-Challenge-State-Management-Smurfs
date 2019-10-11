@@ -4,7 +4,7 @@ import * as actionCreators from '../state/actionCreators';
 import '../scss/SmurfForm.scss';
 
 export function SmurfForm(props) {
-    const {getFormValue, postSmurfs, smurfForm, editSmurfs} = props;
+    const {getFormValue, postSmurfs, smurfForm, editSmurfs, removeSmurfs} = props;
     
     const submit = smurfForm => event => {
         event.preventDefault()
@@ -14,6 +14,11 @@ export function SmurfForm(props) {
     const edit = smurfForm => event => {
         event.preventDefault()
         editSmurfs(smurfForm)
+    };
+
+    const remove = smurfForm => event => {
+        event.preventDefault()
+        removeSmurfs(smurfForm)
     };
 
     return (
@@ -30,6 +35,7 @@ export function SmurfForm(props) {
             <label htmlFor='id'>Enter Id for Edit and Delete:</label>
             <input value={smurfForm.id} onChange={getFormValue} name='id' type='text' />
             <button onClick={edit(smurfForm)}>Edit</button>
+            <button onClick={remove(smurfForm)}>Delete</button>
             </fieldset>
         </form>
     )
