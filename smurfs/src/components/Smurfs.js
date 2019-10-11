@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 import Smurf from './Smurf';
+import '../scss/Smurfs.scss';
 
 export function Smurfs(props) {
     const { smurfs, getSmurfs } = props;
