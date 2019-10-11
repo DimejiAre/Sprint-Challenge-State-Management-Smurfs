@@ -32,10 +32,14 @@ export function SmurfForm(props) {
                 <label htmlFor='height'>height</label>
                 <input value={smurfForm.height} onChange={getFormValue} name='height' type='text' />
                 <button onClick={submit(smurfForm)}>Submit</button>
-                <label htmlFor='id'>Enter Id for Edit and Delete:</label>
-                <input value={smurfForm.id} onChange={getFormValue} name='id' type='text' />
-                <button onClick={edit(smurfForm)}>Edit</button>
-                <button onClick={remove(smurfForm)}>Delete</button>
+                <hr />
+                <label htmlFor='id'>Enter ID for Edit and Delete:</label>
+                <input id='id' value={smurfForm.id} onChange={getFormValue} name='id' type='text' />
+                <div>
+                    <button onClick={edit(smurfForm)}>Edit</button>
+                    <button onClick={remove(smurfForm)}>Delete</button>
+                </div>
+                
             </fieldset>
         </form>
     )
